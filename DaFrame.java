@@ -19,12 +19,16 @@ public class DaFrame extends JFrame
 		
 		JPanel p1 = new JPanel();
 		p1.add(new JLabel("panel1"));
+		JButton back = new JButton("GO BACK");
+		p1.add(back);
 		JButton b1 = new JButton("yeee");
 		p1.setLayout(new GridBagLayout());
 		p1.add(b1);
 		
 		JPanel p2 = new JPanel();
 		p2.add(new JLabel("panel 2"));
+		JButton back2 = new JButton("GO BACK");
+		p2.add(back2);
 		JButton b2 = new JButton("this is a button");
 		p2.add(b2);
 		p2.setLayout(new GridBagLayout());
@@ -68,7 +72,25 @@ public class DaFrame extends JFrame
 				cl.show(overall, "panel 1");
 			}
 		});
-		setBounds(300, 300, 400, 400);
+		
+		back.addActionListener(new ActionListener ()
+		{
+
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				cl.show(overall, "panel 3");
+			}
+		});
+		
+		back2.addActionListener(new ActionListener ()
+		{
+
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				cl.show(overall, "panel 1");
+			}
+		});
+		setBounds(100, 100, 600, 500);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
